@@ -8,10 +8,10 @@ Họ và tên: Tô Võ Như Quỳnh
 Giảng viên: Thầy Nguyễn Lê Minh. 
 
 ## Phần 1: Công nghệ sử dụng:
-  -Java(Android Studio)
-  -XML
-  -Youtube API
-  -SQLite(SQLite Studio)
+  *Java(Android Studio)
+  *XML
+  *Youtube API
+  *SQLite(SQLite Studio)
 
 ## Phần 2: Các chức năng đã hoàn thành:
 1. Xây dựng database Manage Body Condition
