@@ -16,8 +16,11 @@ Giảng viên: Thầy Nguyễn Lê Minh. 
 
 ## Phần 2: Các chức năng đã hoàn thành:
 1. Xây dựng database Manage Body Condition
-2. 
-3. 
+2. Sign in account
+3. Sign up account
+4. Thêm thông tin thể trạng của người dùng
+5. Đưa ra lời khuyên và các sự lựa chọn cho người dùng
+6. Show layout thông tin người dùng
 
 
 ## Phần 3: Các chức năng chưa hoàn thành:
