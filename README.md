@@ -19,8 +19,11 @@ Giảng viên: Thầy Nguyễn Lê Minh. 
 2. Sign in account
 3. Sign up account
 4. Thêm thông tin thể trạng của người dùng
-5. Đưa ra lời khuyên và các sự lựa chọn cho người dùng
-6. Show layout thông tin người dùng
+5. Bắt các lỗi về tài khoảng
+6. Đưa ra lời khuyên và các sự lựa chọn cho người dùng
+7. Show layout thông tin người dùng
+8. Show list chế độ ăn theo sự lụa chọn của người dùng
+9. 
 
 
 ## Phần 3: Các chức năng chưa hoàn thành:
