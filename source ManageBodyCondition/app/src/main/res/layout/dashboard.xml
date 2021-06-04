@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:orientation="vertical"
+            android:layout_margin="15dp"
+            android:background="@drawable/custom_layout_showinfo">
+
+            <TextView
+                android:id="@+id/txt_BMI"
+                android:layout_marginLeft="20dp"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:text="0.0 okelala"
+                android:textSize="30dp"
+                android:gravity="bottom"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bmi1"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="15dp">
+            <LinearLayout
+                android:layout_width="170dp"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:layout_margin="5dp"
+                android:background="@drawable/custom_layout_showinfo">
+                <TextView
+                    android:id="@+id/txt_height"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="0.00 cm"
+                    android:textSize="30dp"
+                    android:gravity="center"/>
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/iconheight"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="170dp"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:layout_margin="7dp"
+                android:background="@drawable/custom_layout_showinfo">
+                <TextView
+                    android:id="@+id/txt_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="0.00 kg"
+                    android:textSize="30dp"
+                    android:gravity="center"/>
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/iconweight"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="15dp"
+            android:background="@drawable/custom_layout_showinfo">
+            <ImageView
+                android:id="@+id/imgview_body"
+                android:layout_marginLeft="10dp"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/fullbodygirl"/>
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp">
+                <TextView
+                    android:layout_marginTop="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Chest:"
+                    android:textSize="25dp"/>
+                <TextView
+                    android:id="@+id/txt_chest"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="0.00 cm"
+                    android:textSize="25dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Waist:"
+                    android:textSize="25dp"/>
+                <TextView
+                    android:id="@+id/txt_waist"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="0.00 cm"
+                    android:textSize="25dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Hips:"
+                    android:textSize="25dp"/>
+                <TextView
+                    android:id="@+id/txt_hips"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="0.00 cm"
+                    android:textSize="25dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:text="Thank you :)"
+            android:textColor="@color/purple_200" />
+
+    </LinearLayout>
+
+
+</ScrollView>

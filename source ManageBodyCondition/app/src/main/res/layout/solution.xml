@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/advice">
+        <TextView
+            android:id="@+id/txt_advice"
+            android:paddingTop="30dp"
+            android:alpha="0.8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:text="blablabla"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textColor="@color/purple_500"
+            android:autoSizeTextType="uniform"
+            android:textSize="25dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="176dp"
+        android:orientation="vertical"
+        android:gravity="end"
+        android:background="@drawable/giamcan">
+
+        <Button
+            android:id="@+id/btn_solution_GiamCan"
+            android:backgroundTint="@color/white"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="180dp"
+            android:layout_height="70dp"
+            android:text="Giảm lượng mỡ thừa"
+            android:textSize="15dp"
+            android:textColor="@color/teal_200"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="176dp"
+        android:background="@drawable/suckhoe">
+        <Button
+            android:id="@+id/btn_solution_Suckhoe"
+            android:backgroundTint="@color/white"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="180dp"
+            android:layout_height="70dp"
+            android:text="Tăng cường sức khỏe"
+            android:textSize="15dp"
+            android:textColor="@color/teal_200"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="176dp"
+        android:gravity="start"
+        android:background="@drawable/cantang">
+
+        <Button
+            android:id="@+id/btn_solution_TangCan"
+            android:backgroundTint="@color/white"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="30dp"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:text="Tăng cân tăng cơ"
+            android:textSize="15dp"
+            android:textColor="@color/teal_200"/>
+
+    </LinearLayout>
+</LinearLayout>
