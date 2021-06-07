@@ -35,7 +35,7 @@ Giảng viên: Thầy Nguyễn Lê Minh. 
 3.
 
 ## Hướng dẫn sử dụng:
-Đã xuất file apk
-Cài đặc và dể dàng sử dụng.
+Đã xuất file apk, cài đặc và dể sử dụng.
+
 
 Xin cám ơn!
