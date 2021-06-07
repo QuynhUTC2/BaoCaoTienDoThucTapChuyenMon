@@ -30,9 +30,9 @@ Giảng viên: Thầy Nguyễn Lê Minh. 
 13. 
 
 ## Phần 3: Các chức năng chưa hoàn thành:
-1.Ẩn các bài tập và bữa ăn đã thực hiện (tránh gây sự nhầm lẫn)
-2.Cho người dùng nhập lại thông tin thể trạng, sau khi hoàn thành chọn lại chế độ ăn và tập luyện (đang thực hiện)
-3.
+1.Ẩn các bài tập và bữa ăn đã thực hiện (tránh gây sự nhầm lẫn).
+2.Cho người dùng nhập lại thông tin thể trạng, sau khi hoàn thành chọn lại chế độ ăn và tập luyện (đang thực hiện).
+3.Đăng nhập facebook,gmail.
 
 ## Hướng dẫn sử dụng:
 Đã xuất file apk, cài đặc và dể sử dụng.
