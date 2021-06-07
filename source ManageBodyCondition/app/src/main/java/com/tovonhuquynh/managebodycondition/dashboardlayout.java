@@ -18,7 +18,7 @@ import com.tovonhuquynh.model.InfoUser;
 public class dashboardlayout extends Fragment {
 
    TextView txt_BMI,txt_height,txt_weight,txt_chest,txt_waist,txt_hips;
-   ImageView img_body;
+   ImageView img_body,img_height;
     View adview;
     MainActivity mMainActivity;
     @Nullable
@@ -36,6 +36,7 @@ public class dashboardlayout extends Fragment {
     private void linkview() {
         txt_BMI = adview.findViewById(R.id.txt_BMI);
         img_body = adview.findViewById(R.id.imgview_body);
+        img_height = adview.findViewById(R.id.img_height);
         txt_height = adview.findViewById(R.id.txt_height);
         txt_weight = adview.findViewById(R.id.txt_weight);
         txt_chest = adview.findViewById(R.id.txt_chest);
@@ -61,28 +62,31 @@ public class dashboardlayout extends Fragment {
 
             double BMIshow = Math.round(infoUser.getWeight()/(infoUser.getHeight()*infoUser.getHeight())*100)/100;
             if(BMIshow < 18.5){
-                txt_BMI.setText(String.valueOf(BMIshow) + " underWeight");
+                txt_BMI.setText(String.valueOf(BMIshow) + " Gầy ");
                 txt_BMI.setTextColor(R.color.purple_200);
             }else if (18.5 <= BMIshow && BMIshow <= 22.9){
-                txt_BMI.setText(String.valueOf(BMIshow) + " normal");
+                txt_BMI.setText(String.valueOf(BMIshow) + " Cân đối ");
                 txt_BMI.setTextColor(R.color.green);
             }
             else if (23 <= BMIshow && BMIshow <= 24.9){
-                txt_BMI.setText(String.valueOf(BMIshow) + " overWeight");
+                txt_BMI.setText(String.valueOf(BMIshow) + " Thừa cân");
                 txt_BMI.setTextColor(R.color.yellow);
             }
             else if (25 <= BMIshow && BMIshow <= 29.9){
-                txt_BMI.setText(String.valueOf(BMIshow) + " obese");
+                txt_BMI.setText(String.valueOf(BMIshow) + " Béo");
                 txt_BMI.setTextColor(R.color.ogrange);
             }
             else if (30 <= BMIshow ){
-                txt_BMI.setText(String.valueOf(BMIshow) + " extremly obese");
+                txt_BMI.setText(String.valueOf(BMIshow) + " Béo phì");
                 txt_BMI.setTextColor(R.color.red);
             }
 
             String sexuser = String.valueOf(infoUser.getSex());
             if(sexuser.equals("boy")){
                 img_body.setImageResource(R.drawable.fullbodyboy);
+            }
+            if (sexuser.equals("girl")){
+                img_height.setImageResource(R.drawable.heightgirl);
             }
 
             txt_height.setText(String.valueOf(infoUser.getHeight()) + "m");

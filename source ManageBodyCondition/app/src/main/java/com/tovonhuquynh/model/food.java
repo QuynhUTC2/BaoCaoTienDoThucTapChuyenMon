@@ -7,13 +7,15 @@ public class food {
     private int dietID;
     private int day;
     private String mealtime;
+    private int imgfood;
 
-    public food(int iddetail, String foodname, int dietID, int day, String mealtime) {
+    public food(int iddetail, String foodname, int dietID, int day, String mealtime, int imgfood) {
         this.iddetail = iddetail;
         this.foodname = foodname;
         this.dietID = dietID;
         this.day = day;
         this.mealtime = mealtime;
+        this.imgfood = imgfood;
     }
 
     public int getDay() {
@@ -54,5 +56,13 @@ public class food {
 
     public void setIddetail(int iddetail) {
         this.iddetail = iddetail;
+    }
+
+    public int getImgfood() {
+        return imgfood;
+    }
+
+    public void setImgfood(int imgfood) {
+        this.imgfood = imgfood;
     }
 }

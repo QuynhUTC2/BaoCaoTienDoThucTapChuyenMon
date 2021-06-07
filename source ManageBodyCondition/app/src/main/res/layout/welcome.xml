@@ -11,8 +11,9 @@
         android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to the health app. Hope you will have an enjoyable and healthy experience when using the app"
-        android:textSize="35dp"
+        android:text="Chào mừng bạn đến với ứng dụng sức khỏe. Hi vọng bạn sẽ có những trải nghiệm thú vị và lành mạnh khi sử dụng ứng dụng"
+        android:textSize="34dp"
+        android:textColor="@color/white"
         style="@style/TextAppearance.AppCompat.Large.Inverse"/>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -23,20 +24,20 @@
         <Button
             android:id="@+id/btn_signUpW"
             android:layout_margin="10dp"
-            android:text="Sign up"
+            android:text="Đăng ký"
             android:textSize="20dp"
             android:backgroundTint="#F0F3F6"
-            android:textColor="#03A9F4"
-            android:layout_width="150dp"
+            android:textColor="#F80D44"
+            android:layout_width="170dp"
             android:layout_height="60dp"/>
         <Button
             android:id="@+id/btn_signInW"
             android:layout_margin="10dp"
-            android:text="Sign in"
+            android:text="Đăng nhập"
             android:textSize="20dp"
             android:backgroundTint="#F0F3F6"
-            android:textColor="#03A9F4"
-            android:layout_width="150dp"
+            android:textColor="#F80D44"
+            android:layout_width="170dp"
             android:layout_height="60dp"/>
 
 

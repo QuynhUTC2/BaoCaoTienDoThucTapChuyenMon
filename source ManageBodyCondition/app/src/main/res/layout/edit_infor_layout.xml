@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E1DFDF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/background">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_avtedit"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_height="120dp"
+            android:layout_width="120dp"
+            android:src="@drawable/khunglongcon"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/white" />
+        <TextView
+            android:id="@+id/txt_Nameedit"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="5dp"
+            android:text="nhuquynh02"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btn_edtpassword"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Đổi mật khẩu"
+            android:textSize="18dp"
+            android:paddingTop="10dp"
+            android:gravity=""
+            android:layout_marginTop="5dp"
+            android:padding="10dp"
+            android:textColor="@color/background"
+            android:backgroundTint="@color/white" />
+        <Button
+            android:id="@+id/btn_editInfo"
+            android:layout_width="match_parent"
+            android:paddingTop="10dp"
+            android:layout_height="70dp"
+            android:text="Thay đổi thông tin người dùng "
+            android:textSize="18dp"
+            android:gravity=""
+            android:padding="10dp"
+            android:textColor="@color/background"
+            android:backgroundTint="@color/white"/>
+        <Button
+            android:paddingTop="10dp"
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Đăng xuất"
+            android:textSize="18dp"
+            android:gravity=""
+            android:padding="10dp"
+            android:textColor="@color/background"
+            android:backgroundTint="@color/white"/>
+    </LinearLayout>
+
+</LinearLayout>

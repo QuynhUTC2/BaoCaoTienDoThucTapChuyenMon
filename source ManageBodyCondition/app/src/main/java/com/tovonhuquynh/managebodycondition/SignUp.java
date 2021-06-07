@@ -1,7 +1,6 @@
 package com.tovonhuquynh.managebodycondition;
 
 import android.annotation.SuppressLint;
-import android.app.Dialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
@@ -56,6 +55,7 @@ public class SignUp extends AppCompatActivity {
                             Toast.makeText(SignUp.this,"FAIL!!!!",Toast.LENGTH_LONG);
                         }
                         Intent intent = new Intent(SignUp.this,InfoUser.class);
+                        intent.putExtra("userSinup",userName);
                         startActivity(intent);
                     }else {
                         Toast.makeText(SignUp.this,"password again khong trung khop!!",Toast.LENGTH_LONG).show();

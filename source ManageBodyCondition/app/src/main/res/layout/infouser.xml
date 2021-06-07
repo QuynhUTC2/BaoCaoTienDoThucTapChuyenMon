@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/welcomecut"
+    android:background="#F80D44"
     android:padding="15dp"
     android:alpha="0.9">
 <LinearLayout
@@ -16,129 +17,136 @@
         android:layout_width="wrap_content"
         android:layout_height="80dp"
         android:padding="10dp"
-        android:text="Your information"
-        android:textSize="40dp" />
+        android:text="Thông tin của bạn "
+        android:textSize="40dp"
+        android:textColor="@color/white"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username:"
+        android:text="Tên sử dụng:"
         android:textSize="20dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"/>
     <EditText
         android:id="@+id/edt_userName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your username"
-        android:textColorHint="@color/black"
+        android:textColorHint="@color/white"
         android:textSize="23dp"
         android:maxLength="50"
         app:counterMaxLength="50"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sex:"
+        android:text="Giới tính :"
         android:textSize="20dp"
-        android:textColor="@color/black"/>
-    <EditText
+        android:textColor="@color/white"/>
+    <Spinner
         android:id="@+id/edt_Sex"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter your sex"
-        android:textColorHint="@color/black"
+        android:layout_height="40dp"
+        android:hint="Type boy or girl"
+        android:textColorHint="@color/white"
         android:textSize="25dp"
         android:maxLength="50"
         app:counterMaxLength="50"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Height:"
+        android:text="Chiều cao:"
         android:textSize="20dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"/>
     <EditText
         android:id="@+id/edt_height"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your height"
-        android:textColorHint="@color/black"
+        android:hint="Nhập chiều cao của bạn "
+        android:textColorHint="@color/white"
         android:textSize="23dp"
         android:maxLength="50"
         app:counterMaxLength="50"
-        android:textColor="@color/black" />
+        android:textColor="@color/white"
+        android:inputType="numberDecimal"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Weight:"
+        android:text="Cân nặng:"
         android:textSize="20dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"/>
     <EditText
         android:id="@+id/edt_weight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your weight"
-        android:textColorHint="@color/black"
+        android:hint="Nhập cân nặng của bạn "
+        android:textColorHint="@color/white"
         android:textSize="23dp"
         android:maxLength="50"
         app:counterMaxLength="50"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"
+        android:inputType="numberDecimal"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chest:"
+        android:text="Vồng 1:"
         android:textSize="20dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"/>
     <EditText
         android:id="@+id/edt_chest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your chest"
-        android:textColorHint="@color/black"
+        android:hint="Nhập cân nặng của bạn"
+        android:textColorHint="@color/white"
         android:textSize="25dp"
         android:maxLength="50"
         app:counterMaxLength="50"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"
+        android:inputType="numberDecimal"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Waist:"
+        android:text="Vòng 2:"
         android:textSize="20dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"/>
 
     <EditText
         android:id="@+id/edt_waist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your Waist"
+        android:hint="Nhập vòng 2 của bạn"
         android:maxLength="50"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="25dp"
-        app:counterMaxLength="50" />
+        app:counterMaxLength="50"
+        android:inputType="numberDecimal"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hips:"
+        android:text="Vòng 3:"
         android:textSize="20dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"/>
     <EditText
         android:id="@+id/edt_hips"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your hips"
-        android:textColorHint="@color/black"
+        android:hint="Nhập vòng 3 của bạn"
+        android:textColorHint="@color/white"
         android:textSize="25dp"
         android:maxLength="50"
         app:counterMaxLength="50"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:inputType="numberDecimal"/>
     <Button
+        android:layout_marginTop="10dp"
         android:layout_gravity="end"
         android:id="@+id/btn_nextInFo"
-        android:text="next"
+        android:text="Xong"
         android:textSize="20dp"
         android:backgroundTint="#F0F3F6"
-        android:textColor="#03A9F4"
+        android:textColor="#F80D44"
         android:layout_width="150dp"
         android:layout_height="60dp"/>
 </LinearLayout>

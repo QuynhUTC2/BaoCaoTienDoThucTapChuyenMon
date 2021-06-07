@@ -1,5 +1,7 @@
 package com.tovonhuquynh.managebodycondition;
 
+import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +11,122 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.github.mikephil.charting.charts.CombinedChart;
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.CombinedData;
+import com.github.mikephil.charting.data.DataSet;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class tracklayout extends Fragment {
+    private CombinedChart mChart;
+    View adview;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.track,container,false);
+        adview = inflater.inflate(R.layout.track,container,false);
+
+        MainActivity mMainActivity =(MainActivity) getActivity();
+        String userName = mMainActivity.getuserName();
+
+        mChart = (CombinedChart) adview.findViewById(R.id.combinedChart);
+        mChart.getDescription().setEnabled(false);
+        mChart.setBackgroundColor(Color.WHITE);
+        mChart.setDrawGridBackground(false);
+        mChart.setDrawBarShadow(false);
+        mChart.setHighlightFullBarEnabled(false);
+
+        YAxis rightAxis = mChart.getAxisRight();
+        rightAxis.setDrawGridLines(false);
+        rightAxis.setAxisMinimum(0f);
+
+        YAxis leftAxis = mChart.getAxisLeft();
+        leftAxis.setDrawGridLines(false);
+        leftAxis.setAxisMinimum(0f);
+
+        final List<String> xLabel = new ArrayList<>();
+
+
+        Cursor cursor = Welcome.database.rawQuery("select infoID from infoUser where userName = '"+userName+"' " , null);
+        while (cursor.moveToNext()) {
+            int iduser = cursor.getInt(0);
+            xLabel.add("Week"+iduser);
+        }
+
+
+        XAxis xAxis = mChart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setAxisMinimum(0f);
+        xAxis.setGranularity(1f);
+        xAxis.setValueFormatter(new IAxisValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                return xLabel.get((int) value % xLabel.size());
+            }
+        });
+
+        CombinedData data = new CombinedData();
+        LineData lineDatas = new LineData();
+        lineDatas.addDataSet((ILineDataSet) dataChart(userName));
+
+        data.setData(lineDatas);
+
+        xAxis.setAxisMaximum(data.getXMax() + 0.25f);
+
+        mChart.setData(data);
+        mChart.invalidate();
+        return adview;
     }
+
+
+    public static DataSet dataChart(String userName) {
+
+        LineData d = new LineData();
+
+        int i =0;
+        int[] data = new int[4];
+        Cursor cursor = Welcome.database.rawQuery("select * from infoUser where userName = '"+userName+"' " , null);
+        while (cursor.moveToNext()) {
+            double heightshow = cursor.getDouble(2);
+            double weightshow = cursor.getDouble(3);
+            int BMI = (int) Math.round(weightshow/(heightshow*heightshow)*100);
+
+            data[i] = BMI;
+            i++;
+        }
+
+
+        ArrayList<Entry> entries = new ArrayList<Entry>();
+
+        for (int index = 0; index < data.length; index++) {
+            entries.add(new Entry(index, data[index]));
+        }
+
+        LineDataSet set = new LineDataSet(entries, "Request Ots approved");
+        set.setColor(Color.GREEN);
+        set.setLineWidth(2.5f);
+        set.setCircleColor(Color.GREEN);
+        set.setCircleRadius(3f);
+        set.setFillColor(Color.GREEN);
+        set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        set.setDrawValues(true);
+        set.setValueTextSize(10f);
+        set.setValueTextColor(Color.GREEN);
+
+        set.setAxisDependency(YAxis.AxisDependency.LEFT);
+        d.addDataSet(set);
+
+        return set;
+    }
+
+
 }

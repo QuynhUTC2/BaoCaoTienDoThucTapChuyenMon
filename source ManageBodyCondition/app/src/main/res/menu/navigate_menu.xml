@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/mn_dashboard"
-        android:title="Dashboard"
+        android:title="Thể trạng"
         android:icon="@drawable/ic_baseline_dashboard_24"/>
     <item
         android:id="@+id/mn_food"
         android:icon="@drawable/ic_baseline_fastfood_24"
-        android:title="Food"/>
+        android:title="Thức ăn "/>
     <item
         android:id="@+id/mn_fitness"
         android:icon="@drawable/ic_baseline_fitness_center_24"
-        android:title="Fitness"/>
+        android:title="Tập luyện"/>
     <item
         android:id="@+id/mn_track"
-        android:icon="@drawable/ic_baseline_dehaze_24"
-        android:title="Track"/>
+        android:icon="@drawable/ic_baseline_bar_chart_24"
+        android:title="Theo dõi"/>
 
 </menu>

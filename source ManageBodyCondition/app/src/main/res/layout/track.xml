@@ -2,6 +2,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black">
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/combinedChart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="20dp"
+            />
+    </RelativeLayout>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Biểu đồ theo dõi BMI qua các tuần."
+        android:layout_gravity="center"
+        android:textColor="@color/background"
+        android:textSize="20dp"/>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_width="350dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_layout_showinfo"
+        android:text="BMI của bạn đang có chiều hướng giảm thấy so với chiều cao. Hãy chọn lại solution tăng cân để có sức khỏe tốt hơn nhé."
+        android:textSize="24dp"
+        android:autoSizeTextType="uniform"
+        android:textColor="@color/background"/>
 
 </LinearLayout>

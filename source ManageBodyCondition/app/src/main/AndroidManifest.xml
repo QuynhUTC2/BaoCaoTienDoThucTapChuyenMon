@@ -3,6 +3,7 @@
     package="com.tovonhuquynh.managebodycondition">
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -23,6 +24,10 @@
         <activity android:name=".InfoUser"/>
         <activity android:name=".solution"/>
         <activity android:name=".MainActivity" />
+        <activity android:name=".edit_layout"/>
+        <activity android:name=".edit_password_layout"/>
+        <activity android:name=".playvideo"/>
+        <activity android:name=".monangoiy"/>
     </application>
 
 </manifest>
