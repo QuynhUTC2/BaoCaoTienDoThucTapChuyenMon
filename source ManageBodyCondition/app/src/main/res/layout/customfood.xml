@@ -6,14 +6,16 @@
 
     <LinearLayout
         android:layout_width="375dp"
-        android:layout_height="135dp"
+        android:layout_height="139dp"
         android:background="@drawable/custom_layout_showinfo">
+
         <ImageView
-            android:layout_marginLeft="5dp"
             android:id="@+id/img_food"
             android:layout_width="150dp"
             android:layout_height="120dp"
-            android:src="@drawable/breakfast"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/breakfast" />
 
         <LinearLayout
             android:layout_width="216dp"
@@ -30,7 +32,6 @@
                     android:id="@+id/txt_meal"
                     android:layout_width="110dp"
                     android:layout_height="30dp"
-                    android:padding="5dp"
                     android:text="Breafast"
                     android:textColor="#F62567"
                     android:textSize="15dp" />
@@ -49,11 +50,11 @@
             <TextView
                 android:id="@+id/txt_foodlist"
                 android:layout_width="210dp"
-                android:layout_height="72dp"
-                android:autoSizeTextType="uniform"
+                android:layout_height="65dp"
                 android:text="blablabla"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -62,24 +63,20 @@
                 <CheckBox
                     android:id="@+id/ckb_checkfood"
                     android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_marginLeft="1dp"
-                    android:layout_marginBottom="10dp" />ý
+                    android:layout_height="25dp" />
+
                 <Button
                     android:id="@+id/btn_goiy"
-                    android:layout_width="180dp"
-                    android:layout_height="30dp"
-                    android:text="gợi ý món ăn"
-                    android:textSize="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:textColor="@color/background"
-                    android:backgroundTint="@color/white"/>
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="50dp"
+                    android:backgroundTint="@color/background"
+                    android:text="gợi ý"
+                    android:textColor="@color/white"
+                    android:textSize="10dp" />
             </LinearLayout>
-
 
         </LinearLayout>
     </LinearLayout>
-
-
 
 </LinearLayout>

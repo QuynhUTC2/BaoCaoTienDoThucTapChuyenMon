@@ -42,21 +42,30 @@ public class edit_password_layout extends AppCompatActivity {
                 String passWord = edt_pass.getText().toString();
                 String passWordAgain = edt_passagain.getText().toString();
 
-                if(passWord.length()<8){
-                    edt_pass.setText("");
-                    edt_pass.setHint("Password phai tu 8 chu so!");
-                    edt_pass.setHintTextColor(R.color.red);
+                if(passWord == null){
+                    edt_pass.setHint("Hãy nhập mật khẩu!");
+                    edt_pass.setHintTextColor(R.color.ogrange);
+                }else if (passWordAgain == null){
+                    edt_passagain.setHint("Hãy nhập lại mật khẩu!");
+                    edt_passagain.setHintTextColor(R.color.ogrange);
                 }else {
-                    if(passWord.equals(passWordAgain)){
-
-                        Cursor cursor =Welcome.database.rawQuery("update users set password = '"+passWord+"' where username = '"+userName+"'",null);
-
-                        finish();
+                    if(passWord.length()<8){
+                        edt_pass.setText("");
+                        edt_pass.setHint("Password phai tu 8 chu so!");
+                        edt_pass.setHintTextColor(R.color.red);
                     }else {
-                        Toast.makeText(edit_password_layout.this,"password again khong trung khop!!",Toast.LENGTH_LONG).show();
-                        edt_passagain.setText("");
+                        if(passWord.equals(passWordAgain)){
+
+                            Cursor cursor =Welcome.database.rawQuery("update users set password = '"+passWord+"' where username = '"+userName+"'",null);
+
+                            finish();
+                        }else {
+                            Toast.makeText(edit_password_layout.this,"password again khong trung khop!!",Toast.LENGTH_LONG).show();
+                            edt_passagain.setText("");
+                        }
                     }
                 }
+
             }
 
         });

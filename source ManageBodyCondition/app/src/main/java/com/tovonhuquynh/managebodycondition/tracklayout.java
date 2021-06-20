@@ -38,7 +38,17 @@ public class tracklayout extends Fragment {
         MainActivity mMainActivity =(MainActivity) getActivity();
         String userName = mMainActivity.getuserName();
 
-        mChart = (CombinedChart) adview.findViewById(R.id.combinedChart);
+        chartBMI(userName);
+        chartWeight(userName);
+        chartChest(userName);
+        chartWaist(userName);
+        charthips(userName);
+
+        return adview;
+    }
+
+    public  void chartBMI(String userName){
+        mChart = (CombinedChart) adview.findViewById(R.id.combinedChartBMI);
         mChart.getDescription().setEnabled(false);
         mChart.setBackgroundColor(Color.WHITE);
         mChart.setDrawGridBackground(false);
@@ -55,11 +65,10 @@ public class tracklayout extends Fragment {
 
         final List<String> xLabel = new ArrayList<>();
 
-
         Cursor cursor = Welcome.database.rawQuery("select infoID from infoUser where userName = '"+userName+"' " , null);
         while (cursor.moveToNext()) {
             int iduser = cursor.getInt(0);
-            xLabel.add("Week"+iduser);
+            xLabel.add("Week "+iduser);
         }
 
 
@@ -76,7 +85,7 @@ public class tracklayout extends Fragment {
 
         CombinedData data = new CombinedData();
         LineData lineDatas = new LineData();
-        lineDatas.addDataSet((ILineDataSet) dataChart(userName));
+        lineDatas.addDataSet((ILineDataSet) dataChartBMI(userName));
 
         data.setData(lineDatas);
 
@@ -84,11 +93,10 @@ public class tracklayout extends Fragment {
 
         mChart.setData(data);
         mChart.invalidate();
-        return adview;
     }
 
 
-    public static DataSet dataChart(String userName) {
+    public static DataSet dataChartBMI(String userName) {
 
         LineData d = new LineData();
 
@@ -104,14 +112,13 @@ public class tracklayout extends Fragment {
             i++;
         }
 
-
         ArrayList<Entry> entries = new ArrayList<Entry>();
 
         for (int index = 0; index < data.length; index++) {
             entries.add(new Entry(index, data[index]));
         }
 
-        LineDataSet set = new LineDataSet(entries, "Request Ots approved");
+        LineDataSet set = new LineDataSet(entries, "BMI");
         set.setColor(Color.GREEN);
         set.setLineWidth(2.5f);
         set.setCircleColor(Color.GREEN);
@@ -128,5 +135,345 @@ public class tracklayout extends Fragment {
         return set;
     }
 
+    public  void chartWeight(String userName){
+        mChart = (CombinedChart) adview.findViewById(R.id.combinedChartWeight);
+        mChart.getDescription().setEnabled(false);
+        mChart.setBackgroundColor(Color.WHITE);
+        mChart.setDrawGridBackground(false);
+        mChart.setDrawBarShadow(false);
+        mChart.setHighlightFullBarEnabled(false);
 
+        YAxis rightAxis = mChart.getAxisRight();
+        rightAxis.setDrawGridLines(false);
+        rightAxis.setAxisMinimum(0f);
+
+        YAxis leftAxis = mChart.getAxisLeft();
+        leftAxis.setDrawGridLines(false);
+        leftAxis.setAxisMinimum(0f);
+
+        final List<String> xLabel = new ArrayList<>();
+
+        Cursor cursor = Welcome.database.rawQuery("select infoID from infoUser where userName = '"+userName+"' " , null);
+        while (cursor.moveToNext()) {
+            int iduser = cursor.getInt(0);
+            xLabel.add("Week "+iduser);
+        }
+
+
+        XAxis xAxis = mChart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setAxisMinimum(0f);
+        xAxis.setGranularity(1f);
+        xAxis.setValueFormatter(new IAxisValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                return xLabel.get((int) value % xLabel.size());
+            }
+        });
+
+        CombinedData data = new CombinedData();
+        LineData lineDatas = new LineData();
+        lineDatas.addDataSet((ILineDataSet) dataChartWeight(userName));
+
+        data.setData(lineDatas);
+
+        xAxis.setAxisMaximum(data.getXMax() + 0.25f);
+
+        mChart.setData(data);
+        mChart.invalidate();
+    }
+
+
+    public static DataSet dataChartWeight(String userName) {
+
+        LineData d = new LineData();
+
+        int i =0;
+        int[] data = new int[4];
+        Cursor cursor = Welcome.database.rawQuery("select * from infoUser where userName = '"+userName+"' " , null);
+        while (cursor.moveToNext()) {
+            double weightshow = cursor.getDouble(3);
+
+            data[i] = (int) weightshow;
+            i++;
+        }
+
+        ArrayList<Entry> entries = new ArrayList<Entry>();
+
+        for (int index = 0; index < data.length; index++) {
+            entries.add(new Entry(index, data[index]));
+        }
+
+        LineDataSet set = new LineDataSet(entries, "Cân nặng");
+        set.setColor(Color.GREEN);
+        set.setLineWidth(2.5f);
+        set.setCircleColor(Color.GREEN);
+        set.setCircleRadius(3f);
+        set.setFillColor(Color.GREEN);
+        set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        set.setDrawValues(true);
+        set.setValueTextSize(10f);
+        set.setValueTextColor(Color.GREEN);
+
+        set.setAxisDependency(YAxis.AxisDependency.LEFT);
+        d.addDataSet(set);
+
+        return set;
+    }
+    public  void chartChest(String userName){
+        mChart = (CombinedChart) adview.findViewById(R.id.combinedChartchest);
+        mChart.getDescription().setEnabled(false);
+        mChart.setBackgroundColor(Color.WHITE);
+        mChart.setDrawGridBackground(false);
+        mChart.setDrawBarShadow(false);
+        mChart.setHighlightFullBarEnabled(false);
+
+        YAxis rightAxis = mChart.getAxisRight();
+        rightAxis.setDrawGridLines(false);
+        rightAxis.setAxisMinimum(0f);
+
+        YAxis leftAxis = mChart.getAxisLeft();
+        leftAxis.setDrawGridLines(false);
+        leftAxis.setAxisMinimum(0f);
+
+        final List<String> xLabel = new ArrayList<>();
+
+        Cursor cursor = Welcome.database.rawQuery("select infoID from infoUser where userName = '"+userName+"' " , null);
+        while (cursor.moveToNext()) {
+            int iduser = cursor.getInt(0);
+            xLabel.add("Week "+iduser);
+        }
+
+
+        XAxis xAxis = mChart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setAxisMinimum(0f);
+        xAxis.setGranularity(1f);
+        xAxis.setValueFormatter(new IAxisValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                return xLabel.get((int) value % xLabel.size());
+            }
+        });
+
+        CombinedData data = new CombinedData();
+        LineData lineDatas = new LineData();
+        lineDatas.addDataSet((ILineDataSet) dataChartChest(userName));
+
+        data.setData(lineDatas);
+
+        xAxis.setAxisMaximum(data.getXMax() + 0.25f);
+
+        mChart.setData(data);
+        mChart.invalidate();
+    }
+
+
+    public static DataSet dataChartChest(String userName) {
+
+        LineData d = new LineData();
+
+        int i =0;
+        int[] data = new int[4];
+        Cursor cursor = Welcome.database.rawQuery("select * from infoUser where userName = '"+userName+"' " , null);
+        while (cursor.moveToNext()) {
+
+            double chest = cursor.getDouble(4);
+
+            data[i] = (int) chest;
+            i++;
+        }
+
+        ArrayList<Entry> entries = new ArrayList<Entry>();
+
+        for (int index = 0; index < data.length; index++) {
+            entries.add(new Entry(index, data[index]));
+        }
+
+        LineDataSet set = new LineDataSet(entries, "Vòng 1");
+        set.setColor(Color.GREEN);
+        set.setLineWidth(2.5f);
+        set.setCircleColor(Color.GREEN);
+        set.setCircleRadius(3f);
+        set.setFillColor(Color.GREEN);
+        set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        set.setDrawValues(true);
+        set.setValueTextSize(10f);
+        set.setValueTextColor(Color.GREEN);
+
+        set.setAxisDependency(YAxis.AxisDependency.LEFT);
+        d.addDataSet(set);
+
+        return set;
+    }
+    public  void chartWaist(String userName){
+        mChart = (CombinedChart) adview.findViewById(R.id.combinedChartwaist);
+        mChart.getDescription().setEnabled(false);
+        mChart.setBackgroundColor(Color.WHITE);
+        mChart.setDrawGridBackground(false);
+        mChart.setDrawBarShadow(false);
+        mChart.setHighlightFullBarEnabled(false);
+
+        YAxis rightAxis = mChart.getAxisRight();
+        rightAxis.setDrawGridLines(false);
+        rightAxis.setAxisMinimum(0f);
+
+        YAxis leftAxis = mChart.getAxisLeft();
+        leftAxis.setDrawGridLines(false);
+        leftAxis.setAxisMinimum(0f);
+
+        final List<String> xLabel = new ArrayList<>();
+
+        Cursor cursor = Welcome.database.rawQuery("select infoID from infoUser where userName = '"+userName+"' " , null);
+        while (cursor.moveToNext()) {
+            int iduser = cursor.getInt(0);
+            xLabel.add("Week "+iduser);
+        }
+
+
+        XAxis xAxis = mChart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setAxisMinimum(0f);
+        xAxis.setGranularity(1f);
+        xAxis.setValueFormatter(new IAxisValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                return xLabel.get((int) value % xLabel.size());
+            }
+        });
+
+        CombinedData data = new CombinedData();
+        LineData lineDatas = new LineData();
+        lineDatas.addDataSet((ILineDataSet) dataChartWaist(userName));
+
+        data.setData(lineDatas);
+
+        xAxis.setAxisMaximum(data.getXMax() + 0.25f);
+
+        mChart.setData(data);
+        mChart.invalidate();
+    }
+
+
+    public static DataSet dataChartWaist(String userName) {
+
+        LineData d = new LineData();
+
+        int i =0;
+        int[] data = new int[4];
+        Cursor cursor = Welcome.database.rawQuery("select * from infoUser where userName = '"+userName+"' " , null);
+        while (cursor.moveToNext()) {
+            double Waist = cursor.getDouble(5);
+
+            data[i] = (int) Waist;
+            i++;
+        }
+
+        ArrayList<Entry> entries = new ArrayList<Entry>();
+
+        for (int index = 0; index < data.length; index++) {
+            entries.add(new Entry(index, data[index]));
+        }
+
+        LineDataSet set = new LineDataSet(entries, "Vòng 2");
+        set.setColor(Color.GREEN);
+        set.setLineWidth(2.5f);
+        set.setCircleColor(Color.GREEN);
+        set.setCircleRadius(3f);
+        set.setFillColor(Color.GREEN);
+        set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        set.setDrawValues(true);
+        set.setValueTextSize(10f);
+        set.setValueTextColor(Color.GREEN);
+
+        set.setAxisDependency(YAxis.AxisDependency.LEFT);
+        d.addDataSet(set);
+
+        return set;
+    }
+    public  void charthips(String userName){
+        mChart = (CombinedChart) adview.findViewById(R.id.combinedCharthips);
+        mChart.getDescription().setEnabled(false);
+        mChart.setBackgroundColor(Color.WHITE);
+        mChart.setDrawGridBackground(false);
+        mChart.setDrawBarShadow(false);
+        mChart.setHighlightFullBarEnabled(false);
+
+        YAxis rightAxis = mChart.getAxisRight();
+        rightAxis.setDrawGridLines(false);
+        rightAxis.setAxisMinimum(0f);
+
+        YAxis leftAxis = mChart.getAxisLeft();
+        leftAxis.setDrawGridLines(false);
+        leftAxis.setAxisMinimum(0f);
+
+        final List<String> xLabel = new ArrayList<>();
+
+        Cursor cursor = Welcome.database.rawQuery("select infoID from infoUser where userName = '"+userName+"' " , null);
+        while (cursor.moveToNext()) {
+            int iduser = cursor.getInt(0);
+            xLabel.add("Week "+iduser);
+        }
+
+
+        XAxis xAxis = mChart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setAxisMinimum(0f);
+        xAxis.setGranularity(1f);
+        xAxis.setValueFormatter(new IAxisValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                return xLabel.get((int) value % xLabel.size());
+            }
+        });
+
+        CombinedData data = new CombinedData();
+        LineData lineDatas = new LineData();
+        lineDatas.addDataSet((ILineDataSet) dataChartHips(userName));
+
+        data.setData(lineDatas);
+
+        xAxis.setAxisMaximum(data.getXMax() + 0.25f);
+
+        mChart.setData(data);
+        mChart.invalidate();
+    }
+
+
+    public static DataSet dataChartHips(String userName) {
+
+        LineData d = new LineData();
+
+        int i =0;
+        int[] data = new int[4];
+        Cursor cursor = Welcome.database.rawQuery("select * from infoUser where userName = '"+userName+"' " , null);
+        while (cursor.moveToNext()) {
+            double Hips = cursor.getDouble(6);
+
+            data[i] = (int) Hips;
+            i++;
+        }
+
+        ArrayList<Entry> entries = new ArrayList<Entry>();
+
+        for (int index = 0; index < data.length; index++) {
+            entries.add(new Entry(index, data[index]));
+        }
+
+        LineDataSet set = new LineDataSet(entries, "Vòng 3");
+        set.setColor(Color.GREEN);
+        set.setLineWidth(2.5f);
+        set.setCircleColor(Color.GREEN);
+        set.setCircleRadius(3f);
+        set.setFillColor(Color.GREEN);
+        set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        set.setDrawValues(true);
+        set.setValueTextSize(10f);
+        set.setValueTextColor(Color.GREEN);
+
+        set.setAxisDependency(YAxis.AxisDependency.LEFT);
+        d.addDataSet(set);
+
+        return set;
+    }
 }

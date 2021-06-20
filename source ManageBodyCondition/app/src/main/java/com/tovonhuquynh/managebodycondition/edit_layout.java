@@ -57,6 +57,7 @@ public class edit_layout extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(edit_layout.this,InfoUser.class);
+                intent.putExtra("usernamechange2",username);
                 startActivity(intent);
             }
         });

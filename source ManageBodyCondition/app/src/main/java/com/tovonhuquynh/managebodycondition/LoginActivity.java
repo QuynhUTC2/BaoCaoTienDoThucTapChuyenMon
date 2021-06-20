@@ -1,9 +1,9 @@
 package com.tovonhuquynh.managebodycondition;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.text.NoCopySpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +13,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import static com.tovonhuquynh.managebodycondition.R.id.btn_signIn;
-import static com.tovonhuquynh.managebodycondition.R.id.edt_passwordLogin;
 import static com.tovonhuquynh.managebodycondition.R.id.edt_usernameLogin;
 
 public class LoginActivity extends AppCompatActivity {
@@ -34,21 +33,31 @@ public class LoginActivity extends AppCompatActivity {
     }
     public void addevent(){
         btn_login.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
                 String userName = edtusenamelogin.getText().toString();
                 String passWord = edtpasswordlogin.getText().toString();
-                Cursor cursor = Welcome.database.rawQuery("select * from users where username = '"+userName+"' and password = '"+passWord+"'",null);
-                if(cursor.moveToNext()){
-                    Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                    intent.putExtra("userSignin",userName);
-                    startActivity(intent);
-                }else {
-                    Toast.makeText(LoginActivity.this,"Account or password incorrect!!!",Toast.LENGTH_LONG).show();
-                    edtusenamelogin.setText("");
-                    edtpasswordlogin.setText("");
+                if(userName == null ){
+                    edtusenamelogin.setHint("Hãy nhập tên tài khoản!!");
+                    edtusenamelogin.setHintTextColor(R.color.ogrange);
+                }else if(passWord == null){
+                    edtpasswordlogin.setHint("Hãy nhập tên mật khẩu!!");
+                    edtpasswordlogin.setHintTextColor(R.color.ogrange);
+                } else {
+                    Cursor cursor = Welcome.database.rawQuery("select * from users where username = '"+userName+"' and password = '"+passWord+"'",null);
+                    if(cursor.moveToNext()){
+                        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                        intent.putExtra("userSignin",userName);
+                        startActivity(intent);
+                    }else {
+                        Toast.makeText(LoginActivity.this,"Account or password incorrect!!!",Toast.LENGTH_LONG).show();
+                        edtusenamelogin.setText("");
+                        edtpasswordlogin.setText("");
+                    }
+                    cursor.close();
                 }
-                cursor.close();
+
             }
         });
 

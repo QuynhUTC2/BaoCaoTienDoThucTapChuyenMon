@@ -68,11 +68,11 @@ public class foodlist extends Fragment {
                     String mealtime = cursor.getString(4);
 
                     if (mealtime.equals("Breakfast")) {
-                        arraylist.add(new food(iddetail, listfood, dietid, day, mealtime, R.drawable.breakfast));
+                        arraylist.add(new food(iddetail, listfood, dietid, day, "Bữa sáng", R.drawable.breakfast));
                     } else if (mealtime.equals("Lunch")) {
-                        arraylist.add(new food(iddetail, listfood, dietid, day, mealtime, R.drawable.lunch));
+                        arraylist.add(new food(iddetail, listfood, dietid, day, "Bữa trưa", R.drawable.lunch));
                     } else if (mealtime.equals("Dinner")) {
-                        arraylist.add(new food(iddetail, listfood, dietid, day, mealtime, R.drawable.dinner));
+                        arraylist.add(new food(iddetail, listfood, dietid, day, "Bữa tối", R.drawable.dinner));
                     }
                 }
                 adapter.notifyDataSetChanged();

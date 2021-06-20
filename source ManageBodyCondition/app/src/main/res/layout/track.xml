@@ -1,39 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white">
+    android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_marginTop="5dp"
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
-        <com.github.mikephil.charting.charts.CombinedChart
-            android:id="@+id/combinedChart"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+            <com.github.mikephil.charting.charts.CombinedChart
+                android:id="@+id/combinedChartBMI"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="20dp"
+                />
+        </RelativeLayout>
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Biểu đồ theo dõi BMI qua các tuần."
+            android:layout_gravity="center"
+            android:textColor="@color/background"
+            android:textSize="18dp"/>
+
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <com.github.mikephil.charting.charts.CombinedChart
+                android:id="@+id/combinedChartWeight"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="20dp" />
+        </RelativeLayout>
+        <TextView
             android:layout_marginTop="20dp"
-            />
-    </RelativeLayout>
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Biểu đồ theo dõi BMI qua các tuần."
-        android:layout_gravity="center"
-        android:textColor="@color/background"
-        android:textSize="20dp"/>
-    <TextView
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:layout_width="350dp"
-        android:layout_gravity="center"
-        android:layout_height="wrap_content"
-        android:background="@drawable/custom_layout_showinfo"
-        android:text="BMI của bạn đang có chiều hướng giảm thấy so với chiều cao. Hãy chọn lại solution tăng cân để có sức khỏe tốt hơn nhé."
-        android:textSize="24dp"
-        android:autoSizeTextType="uniform"
-        android:textColor="@color/background"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Biểu đồ theo dõi cân nặng qua các tuần."
+            android:layout_gravity="center"
+            android:textColor="@color/background"
+            android:textSize="18dp"/>
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
 
-</LinearLayout>
+            <com.github.mikephil.charting.charts.CombinedChart
+                android:id="@+id/combinedChartchest"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="20dp" />
+        </RelativeLayout>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Biểu đồ theo dõi vòng 1 qua các tuần."
+            android:layout_gravity="center"
+            android:textColor="@color/background"
+            android:textSize="18dp"/>
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <com.github.mikephil.charting.charts.CombinedChart
+                android:id="@+id/combinedChartwaist"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="20dp" />
+        </RelativeLayout>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Biểu đồ theo dõi vòng 2 qua các tuần."
+            android:layout_gravity="center"
+            android:textColor="@color/background"
+            android:textSize="18dp"/>
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <com.github.mikephil.charting.charts.CombinedChart
+                android:id="@+id/combinedCharthips"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="20dp" />
+        </RelativeLayout>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Biểu đồ theo dõi vòng 3 qua các tuần."
+            android:layout_gravity="center"
+            android:textColor="@color/background"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_width="350dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_layout_showinfo"
+            android:text="Các chỉ số của bạn đang có chiều hướng giảm thấy so với chiều cao. Hãy chọn lại solution tăng cân để có sức khỏe tốt hơn nhé."
+            android:textSize="20dp"
+            android:textColor="@color/background"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="thank you :)"
+            android:gravity="center"/>
+    </LinearLayout>
+
+
+</ScrollView>
