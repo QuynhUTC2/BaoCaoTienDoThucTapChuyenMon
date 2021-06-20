@@ -71,7 +71,9 @@ public class adapterfood extends BaseAdapter {
         holder.btn_goiy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String buaan = holder.txt_meal.getText().toString();
                 Intent intent =new Intent(context, monangoiy.class);
+                intent.putExtra("buaan",buaan);
                 context.startActivity(intent);
             }
         });
@@ -80,7 +82,7 @@ public class adapterfood extends BaseAdapter {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     Toast.makeText(context,"Bạn đã hoàn thành bữa ăn.",Toast.LENGTH_LONG).show();
-                    if(f.getDay()== 3 && f.getMealtime().equals("Dinner")){
+                    if(holder.txt_day.getText().toString().equals("3") && holder.txt_meal.getText().equals("Bữa tối")){
                         Intent intent = new Intent(context, InfoUser.class);
                         context.startActivity(intent);
                     }

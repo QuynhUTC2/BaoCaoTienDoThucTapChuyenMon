@@ -32,6 +32,7 @@
             android:layout_height="30dp"
             android:src="@drawable/ic_baseline_brightness_1_24"/>
         <TextView
+            android:id="@+id/txt_mon1"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginLeft="10dp"
@@ -49,6 +50,7 @@
             android:layout_height="30dp"
             android:src="@drawable/ic_baseline_brightness_1_24"/>
         <TextView
+            android:id="@+id/txt_mon4"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginLeft="10dp"
@@ -66,6 +68,7 @@
             android:layout_height="30dp"
             android:src="@drawable/ic_baseline_brightness_1_24"/>
         <TextView
+            android:id="@+id/txt_mon2"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginLeft="10dp"
@@ -83,6 +86,7 @@
             android:layout_height="30dp"
             android:src="@drawable/ic_baseline_brightness_1_24"/>
         <TextView
+            android:id="@+id/txt_mon3"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginLeft="10dp"

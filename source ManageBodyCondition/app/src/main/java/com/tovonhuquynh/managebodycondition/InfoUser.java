@@ -2,6 +2,7 @@ package com.tovonhuquynh.managebodycondition;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -52,6 +53,25 @@ public class InfoUser extends AppCompatActivity {
 
         if(usernameEdit != null){
             txt_usename.setText(usernameEdit);
+            Cursor cursor = Welcome.database.rawQuery("select * from infoUser where userName = '"+usernameEdit+"' " , null);
+            while (cursor.moveToNext()) {
+                int iduser = cursor.getInt(0);
+                String sexshow = cursor.getString(1);
+                double heightshow = cursor.getDouble(2);
+                double weightshow = cursor.getDouble(3);
+                double chestshow = cursor.getDouble(4);
+                double waistshow = cursor.getDouble(5);
+                double hipsshow = cursor.getDouble(6);
+                String usernameedt = cursor.getString(7);
+                int soluID = cursor.getInt(8);
+                com.tovonhuquynh.model.InfoUser infoUser = new com.tovonhuquynh.model.InfoUser(iduser, sexshow, heightshow, weightshow, chestshow, waistshow, hipsshow, usernameedt, soluID);
+
+                edt_height.setText(String.valueOf(infoUser.getHeight()));
+                edt_weight.setText(String.valueOf(infoUser.getWeight()));
+                edt_chest.setText(String.valueOf(infoUser.getChest()));
+                edt_waist.setText(String.valueOf(infoUser.getWaist()));
+                edt_hips.setText(String.valueOf(infoUser.getHips()));
+            }
         }else if(username != null){
             txt_usename.setText(username);
         }
