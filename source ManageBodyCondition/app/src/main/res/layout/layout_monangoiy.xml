@@ -23,83 +23,17 @@
             android:textColor="@color/white"/>
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="20dp">
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_baseline_brightness_1_24"/>
-        <TextView
-            android:id="@+id/txt_mon1"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:text="Bò né kèm sữa tươi"
-            android:textSize="20dp"/>
-
+        android:layout_width="match_parent"
+        android:layout_height="570dp">
+        <ListView
+            android:id="@+id/lv_monan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="20dp">
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_baseline_brightness_1_24"/>
-        <TextView
-            android:id="@+id/txt_mon4"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:text="Beefsteak kèm sữa tươi "
-            android:textSize="20dp"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="20dp">
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_baseline_brightness_1_24"/>
-        <TextView
-            android:id="@+id/txt_mon2"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:text="Bò hun khói măng tây "
-            android:textSize="20dp"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="20dp">
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_baseline_brightness_1_24"/>
-        <TextView
-            android:id="@+id/txt_mon3"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:text="Canh bò hầm"
-            android:textSize="20dp"/>
-
-    </LinearLayout>
-
     <Button
         android:id="@+id/btn_quitgoiy"
         android:layout_width="100dp"
         android:layout_height="55dp"
-        android:layout_marginTop="290dp"
         android:layout_marginRight="30dp"
         android:layout_gravity="end"
         android:backgroundTint="@color/background"

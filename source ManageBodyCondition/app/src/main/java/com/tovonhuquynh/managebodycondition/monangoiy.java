@@ -1,16 +1,25 @@
 package com.tovonhuquynh.managebodycondition;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ListView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.tovonhuquynh.adapter.adapterMonAn;
+import com.tovonhuquynh.model.MonAn;
+
+import java.util.ArrayList;
+
 public class monangoiy extends AppCompatActivity {
     Button btn_quit;
-    TextView txt_mon1,txt_mon2,txt_mon3,txt_mon4;
+    ListView listView;
+    ArrayList<MonAn> arraylist;
+    adapterMonAn adapter;
+    String mealtime;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,25 +36,34 @@ public class monangoiy extends AppCompatActivity {
             }
         });
 
-        String buaan = getIntent().getStringExtra("buaan");
-        if (buaan.equals("Bữa trưa")){
-            txt_mon1.setText("Cơm với canh bí đỏ thịt băm");
-            txt_mon2.setText("Cơm với thịt luộc kèm salad");
-            txt_mon3.setText("Cháo thịt băm rau củ");
-            txt_mon4.setText("Cơm thịt nướng một quả táo");
-        }else if (buaan.equals("Bữa tối")){
-            txt_mon1.setText("Cháo sườn bò với 1 quả ");
-            txt_mon2.setText("Sửa gạo với bò hun khói ");
-            txt_mon3.setText("Salad với thịt bò xé");
-            txt_mon4.setText("Bò lúc lắc khoai tây nghiền ");
-        }
     }
 
     private void linkview() {
         btn_quit = findViewById(R.id.btn_quitgoiy);
-        txt_mon1 = findViewById(R.id.txt_mon1);
-        txt_mon2 = findViewById(R.id.txt_mon2);
-        txt_mon3 = findViewById(R.id.txt_mon3);
-        txt_mon4 = findViewById(R.id.txt_mon4);
+
+        String buaan = getIntent().getStringExtra("buaan");
+        if (buaan.equals("Bữa sáng")){
+            mealtime = "Breakfast";
+        }else if (buaan.equals("Bữa trưa")){
+            mealtime = "Lunch";
+        }else if (buaan.equals("Bữa tối")){
+            mealtime = "Dinner";
+        }
+        listView = findViewById(R.id.lv_monan);
+        arraylist = new ArrayList<>();
+        adapter = new adapterMonAn(getApplicationContext(),R.layout.custom_listmonan,arraylist);
+        listView.setAdapter(adapter);
+
+        Cursor cursor = Welcome.database.rawQuery("select * from MonAn where mealTime = '" +mealtime+ "' ", null);
+        arraylist.clear();
+        while (cursor.moveToNext()) {
+            int id = cursor.getInt(0);
+            String tenmonan = cursor.getString(1);
+            String tenfood = cursor.getString(2);
+            arraylist.add(new MonAn(id,tenmonan,tenfood));
+
+        }
+        adapter.notifyDataSetChanged();
+
     }
 }
