@@ -34,6 +34,7 @@ Giảng viên: Thầy Nguyễn Lê Minh. 
 1.Ẩn các bài tập và bữa ăn đã thực hiện (tránh gây sự nhầm lẫn).
 2.Cho người dùng nhập lại thông tin thể trạng, sau khi hoàn thành chọn lại chế độ ăn và tập luyện (lỗi vẫn chưa được khác phục).
 3.Đăng nhập facebook,gmail.
+4.Tìm kiếm các món ăn bằng google.
 
 ## Hướng dẫn sử dụng:
 Đã xuất file apk, cài đặc và dể sử dụng.
